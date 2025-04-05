@@ -1,0 +1,93 @@
+import pandas as pd
+import genanki
+from datetime import datetime
+import re
+
+# === 1. Read Excel ===
+df = pd.read_excel(r"EXCEL HERE FILE PATH")
+
+# === 2. Clean and reshape ===
+cleaned = [x for x in df.values.flatten() if not pd.isna(x)]
+
+# === 3. Extract Kanji, Kana (from brackets), and Meaning ===
+final_triplets = []
+
+# Loop through cleaned list in pairs (KanjiKana, Meaning)
+for i in range(0, len(cleaned) - 1, 2):  # avoid index error at end
+    kanji_kana = cleaned[i]
+    meaning = cleaned[i + 1]
+
+    # Try to extract kana from brackets
+    match = re.match(r'^(.*?)（(.*?)）$', str(kanji_kana))
+    if match:
+        kanji = match.group(1)
+        kana = match.group(2)
+    else:
+        kanji = str(kanji_kana)
+        kana = ""
+
+    final_triplets.append([kanji, kana, str(meaning)])
+
+# Optional: preview
+print("✅ Sample triplets:")
+for t in final_triplets[:15]:
+    print(t)
+
+# === 4. Set up Anki deck and model ===
+anki_deck = genanki.Deck(
+    2059400110,
+    "Japanese Security Strategy Vocab"
+)
+
+anki_model = genanki.Model(
+    1607392319,
+    "Japanese Vocabulary Model",
+    fields=[
+        {"name": "Date"},
+        {"name": "Kanji"},
+        {"name": "Kana"},
+        {"name": "Meaning"},
+    ],
+    templates=[
+        {
+            "name": "Japanese Card",
+            "qfmt": """
+                <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-size: 60px; font-weight: bold;">
+                    {{Kanji}}
+                </div>
+            """,
+            "afmt": """
+                <div style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column; text-align: center;">
+                    <div style="font-size: 60px; font-weight: bold; color: #009688; padding: 20px; border-radius: 15px; background-color: #f0f0f0;">
+                        {{Kanji}}
+                    </div>
+                    <div style="font-size: 40px; margin-top: 20px; color: #ffffff;">
+                        <b>Reading:</b> {{Kana}}
+                    </div>
+                    <div style="font-size: 30px; margin-top: 10px; font-style: italic; color: #ffffff;">
+                        <b>Meaning:</b> {{Meaning}}
+                    </div>
+                    <div style="font-size: 20px; margin-top: 15px; color: gray;">
+                        Added on: {{Date}}
+                    </div>
+                </div>
+            """,
+        },
+    ],
+)
+
+# === 5. Add notes to the deck ===
+today = datetime.today().strftime('%Y-%m-%d')
+
+for kanji, kana, meaning in final_triplets:
+    note = genanki.Note(
+        model=anki_model,
+        fields=[today, kanji, kana, meaning]
+    )
+    anki_deck.add_note(note)
+
+# === 6. Save the deck ===
+anki_output_file = r"FilePathtoSave.apkg"
+genanki.Package(anki_deck).write_to_file(anki_output_file)
+
+print(f"\n✅ Anki deck saved: {anki_output_file}")
