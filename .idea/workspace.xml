@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="010cc1c0-31b7-4c80-8082-e584b786556f" name="Changes" comment="New excel to anki code" />
+    <list default="true" id="010cc1c0-31b7-4c80-8082-e584b786556f" name="Changes" comment="New excel to anki code">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,19 +36,36 @@
   "keyToString": {
     "Python.Adapt_Excel_Create_Anki.executor": "Run",
     "Python.Combined_JMDict_KanjiDict_Searcher.executor": "Run",
+    "Python.CrammingGoogleAPI_fromKanjiapidev_wordcreation.executor": "Run",
     "Python.Cross_reference_pull_Jisho_API.executor": "Run",
     "Python.Decompress_ExtractIDs_Process_as_csv.executor": "Run",
     "Python.Decompress_Extract_Match_Anki.executor": "Run",
+    "Python.GoogleAPIAdapt_Excel_Create_Anki.executor": "Run",
+    "Python.GoogleAPI_fromKanjiapidev_wordcreation.executor": "Run",
     "Python.Jmdict_searcher.executor": "Run",
     "Python.Manipulate_Jaoanese_App_file.executor": "Run",
+    "Python.PullFromJishoAPI.executor": "Run",
     "Python.Pull_IDs_from_Japanese_app_data.executor": "Run",
+    "Python.Scen1.1.Clean_Japanese_App_List_Data.executor": "Run",
+    "Python.Scen2.1.Clean_Augment_Japanese_App_List_Data.executor": "Run",
+    "Python.SelfInputtedGoogleAPIAdapt_Excel_Create_Anki.executor": "Run",
     "Python.Testing_script.executor": "Run",
+    "Python.Use_ListofKanji_forWordCreation.executor": "Run",
     "Python.decompress_J_app_data_and_pull_IDs_out.executor": "Run",
+    "Python.gAPI_Takesabilityoreadkunon.executor": "Run",
+    "Python.gAPI_TakesabilityoreadkunonIgnoresone.executor": "Run",
+    "Python.kanjiapi_dev.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Tom/OneDrive/Coding Projects/Kanjidicparser"
+    "last_opened_file_path": "C:/Users/Tom/OneDrive/Coding Projects/Japanese_App_BackUp_Words/.venv/Scripts"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tom\OneDrive\Coding Projects\Japanese_App_BackUp_Words\.venv\Scripts" />
+      <recent name="C:\Users\Tom\OneDrive\Coding Projects\Japanese_App_BackUp_Words\.venv\Lib" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -87,5 +107,26 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="New excel to anki code" />
     <option name="LAST_COMMIT_MESSAGE" value="New excel to anki code" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/.venv/Scripts/GoogleAPI_fromKanjiapidev_wordcreation.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/.venv/Scripts/GoogleAPI_fromKanjiapidev_wordcreation.py</url>
+          <line>50</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/.venv/Scripts/GoogleAPI_fromKanjiapidev_wordcreation.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
